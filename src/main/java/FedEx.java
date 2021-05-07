@@ -9,7 +9,8 @@ public class FedEx extends StrategyEnvio{
         this.porcentajeAumento = porcentajeAumento;
     }
 
-    double calcularPrecio(boolean esLargaDistancia,double pesoPaquete){
+    @Override
+    public double calcularPrecio(boolean esLargaDistancia,double pesoPaquete){
         if(pesoPaquete >pesoMaximo){
             return precioNormal*pesoPaquete+precioNormal*pesoPaquete*porcentajeAumento;
         }else{

@@ -11,6 +11,7 @@ public class Ups extends StrategyEnvio{
         this.costoEnvio = costoEnvio;
     }
 
+    @Override
     public double calcularPrecio(boolean esLargaDistancia, double pesoPaquete){
         if(pesoMinimo < pesoPaquete){
             return (precioNormal*pesoPaquete+precioNormal*pesoPaquete*porcentajeAumento+costoEnvio);
