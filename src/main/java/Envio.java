@@ -1,16 +1,20 @@
+import java.math.BigDecimal;
+
 public class Envio {
     boolean esLargaDistancia;
-    int pesoPaquete;
+    double pesoPaquete;
     StrategyEnvio estrategiaEnvio;
 
-    public Envio(boolean esLargaDistancia, int pesoPaquete, StrategyEnvio estrategiaEnvio) {
+    public Envio(boolean esLargaDistancia, double pesoPaquete, StrategyEnvio estrategiaEnvio) {
         this.esLargaDistancia = esLargaDistancia;
         this.pesoPaquete = pesoPaquete;
         this.estrategiaEnvio = estrategiaEnvio;
     }
 
-    int calcularPrecio(){
-       return estrategiaEnvio.calcularPrecio(esLargaDistancia,pesoPaquete);
+    public double calcularPrecio(){
+        double precio = estrategiaEnvio.calcularPrecio(esLargaDistancia,pesoPaquete);
+
+        return BigDecimal.valueOf(precio).doubleValue();
     }
 
 

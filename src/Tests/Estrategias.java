@@ -14,32 +14,32 @@ public class Estrategias {
 
     @Test
     public void multiplicaPor50SiEsEstandarYLargaDist(){
-        assertEquals(envio.calcularPrecio(),50000);
+        assertEquals(envio.calcularPrecio(),50000, 0);
     }
 
     @Test
     public void multiplicaPor25SiEsEstandarYDistLocal(){
-        assertEquals(envio2.calcularPrecio(),25000);
+        assertEquals(envio2.calcularPrecio(),25000, 0);
     }
 
     @Test
     public void siEsMayorAPesoMaxYEsFedEx(){
-        assertEquals(envio3.calcularPrecio(),7500);
+        assertEquals(envio3.calcularPrecio(),7500, 0);
     }
 
     @Test
     public void siEsMenorAPesoMaxYEsFedEx(){
-        assertEquals(envio4.calcularPrecio(),250);
+        assertEquals(envio4.calcularPrecio(),250, 0);
     }
 
     @Test
     public void siEsMenorAPesoMinYEsUps(){
-        assertEquals(envio5.calcularPrecio(),600);
+        assertEquals(envio5.calcularPrecio(),600, 0);
     }
 
     @Test
     public void siEsMayorAPesoMinYEsUps(){
-        assertEquals(envio6.calcularPrecio(),2350);
+        assertEquals(envio6.calcularPrecio(),2350, 0);
     }
 
 }

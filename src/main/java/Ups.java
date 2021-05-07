@@ -1,19 +1,19 @@
 public class Ups extends StrategyEnvio{
-    int pesoMinimo;
-    int precioNormal;
+    double pesoMinimo;
+    double precioNormal;
     double porcentajeAumento;
-    int costoEnvio;
+    double costoEnvio;
 
-    public Ups(int pesoMinimo, int precioNormal, double porcentajeAumento, int costoEnvio) {
+    public Ups(double pesoMinimo, double precioNormal, double porcentajeAumento, double costoEnvio) {
         this.pesoMinimo = pesoMinimo;
         this.precioNormal = precioNormal;
         this.porcentajeAumento = porcentajeAumento;
         this.costoEnvio = costoEnvio;
     }
 
-    int calcularPrecio(boolean esLargaDistancia, int pesoPaquete){
+    public double calcularPrecio(boolean esLargaDistancia, double pesoPaquete){
         if(pesoMinimo < pesoPaquete){
-            return (int) (precioNormal*pesoPaquete+precioNormal*pesoPaquete*porcentajeAumento+costoEnvio);
+            return (precioNormal*pesoPaquete+precioNormal*pesoPaquete*porcentajeAumento+costoEnvio);
         }else{
             return precioNormal*pesoPaquete+costoEnvio;
         }

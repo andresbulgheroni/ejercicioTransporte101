@@ -1,8 +1,13 @@
 public class Estandar extends StrategyEnvio{
-    int tarifaLargaDistancia;
-    int tarifaLocal;
+    double tarifaLargaDistancia;
+    double tarifaLocal;
 
-    int calcularPrecio(boolean esLargaDistancia,int kiloPaquete){
+    public Estandar(double tarifaLargaDistancia, double tarifaLocal) {
+        this.tarifaLargaDistancia = tarifaLargaDistancia;
+        this.tarifaLocal = tarifaLocal;
+    }
+
+    double calcularPrecio(boolean esLargaDistancia,double kiloPaquete){
         if(esLargaDistancia){
            return kiloPaquete* tarifaLargaDistancia;
         } else{
@@ -10,8 +15,4 @@ public class Estandar extends StrategyEnvio{
         }
     }
 
-    public Estandar(int tarifaLargaDistancia, int tarifaLocal) {
-        this.tarifaLargaDistancia = tarifaLargaDistancia;
-        this.tarifaLocal = tarifaLocal;
-    }
 }
