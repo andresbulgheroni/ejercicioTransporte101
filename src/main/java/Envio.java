@@ -1,9 +1,9 @@
 import java.math.BigDecimal;
 
 public class Envio {
-    boolean esLargaDistancia;
-    double pesoPaquete;
-    StrategyEnvio estrategiaEnvio;
+    private boolean esLargaDistancia;
+    private double pesoPaquete;
+    private StrategyEnvio estrategiaEnvio;
 
     public Envio(boolean esLargaDistancia, double pesoPaquete, StrategyEnvio estrategiaEnvio) {
         this.esLargaDistancia = esLargaDistancia;
@@ -12,7 +12,7 @@ public class Envio {
     }
 
     public double calcularPrecio(){
-        double precio = estrategiaEnvio.calcularPrecio(esLargaDistancia,pesoPaquete);
+        double precio = estrategiaEnvio.calcularPrecio(esLargaDistancia, pesoPaquete);
 
         return BigDecimal.valueOf(precio).doubleValue();
     }

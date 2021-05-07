@@ -13,11 +13,8 @@ public class Ups extends StrategyEnvio{
 
     @Override
     public double calcularPrecio(boolean esLargaDistancia, double pesoPaquete){
-        if(pesoMinimo < pesoPaquete){
-            return (precioNormal*pesoPaquete+precioNormal*pesoPaquete*porcentajeAumento+costoEnvio);
-        }else{
-            return precioNormal*pesoPaquete+costoEnvio;
-        }
-    }
+        double porcentajePenalizacion = pesoMinimo<pesoPaquete? porcentajeAumento: 0;
 
+        return precioNormal*pesoPaquete*(1+porcentajePenalizacion)+costoEnvio;
+    }
 }

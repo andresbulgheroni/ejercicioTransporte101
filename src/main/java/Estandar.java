@@ -1,6 +1,6 @@
 public class Estandar extends StrategyEnvio{
-    double tarifaLargaDistancia;
-    double tarifaLocal;
+    private double tarifaLargaDistancia;
+    private double tarifaLocal;
 
     public Estandar(double tarifaLargaDistancia, double tarifaLocal) {
         this.tarifaLargaDistancia = tarifaLargaDistancia;
@@ -9,11 +9,8 @@ public class Estandar extends StrategyEnvio{
 
     @Override
     public double calcularPrecio(boolean esLargaDistancia,double kiloPaquete){
-        if(esLargaDistancia){
-           return kiloPaquete* tarifaLargaDistancia;
-        } else{
-            return kiloPaquete*tarifaLocal;
-        }
+        double tarifaPorDistancia = esLargaDistancia? tarifaLargaDistancia: tarifaLocal;
+        return tarifaPorDistancia*kiloPaquete;
     }
 
 }

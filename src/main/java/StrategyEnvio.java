@@ -1,4 +1,4 @@
 public abstract class StrategyEnvio {
-    abstract double calcularPrecio(boolean largaDistancia,double kiloPaquete);
+    public abstract double calcularPrecio(boolean largaDistancia, double pesoPaquete);
 }
 
